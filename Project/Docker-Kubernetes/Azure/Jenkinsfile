@@ -96,9 +96,9 @@ pipeline{
                   steps{
                       echo "Deployment in Dev Environment"
                       sh '''
-                        kubectl apply -f  Project/Docker-Kubernetes/Azure/deployment.yaml -n "$Env_Name"
+                        kubectl apply -f  Project/Docker-Kubernetes/deployment.yaml -n "$Env_Name"
                         sleep 10
-		                kubectl apply -f Project/Docker-Kubernetes/Azure/service.yaml -n "$Env_Name"
+		                kubectl apply -f Project/Docker-Kubernetes/service.yaml -n "$Env_Name"
 
                       '''
                    }
@@ -110,9 +110,9 @@ pipeline{
                steps {
                    echo "Deployment in SBOX Environment"
                       sh '''
-                        kubectl apply -f  Project/Docker-Kubernetes/Azure/deployment.yaml -n "$Env_Name"
+                        kubectl apply -f  Project/Docker-Kubernetes/deployment.yaml -n "$Env_Name"
                         sleep 10
-		                kubectl apply -f Project/Docker-Kubernetes/Azure/service.yaml -n "$Env_Name"
+		                kubectl apply -f Project/Docker-Kubernetes/service.yaml -n "$Env_Name"
 
                     '''
                   }
@@ -124,9 +124,9 @@ pipeline{
                steps {
                    echo "Deployment in Prod Environment"
                      sh '''
-                        kubectl apply -f  Project/Docker-Kubernetes/Azure/deployment.yaml -n "$Env_Name"
+                        kubectl apply -f  Project/Docker-Kubernetes/deployment.yaml -n "$Env_Name"
                         sleep 10
-		                kubectl apply -f Project/Docker-Kubernetes/Azure/service.yaml -n "$Env_Name"
+		                kubectl apply -f Project/Docker-Kubernetes/service.yaml -n "$Env_Name"
                       '''
                   }
                 }
