@@ -3,7 +3,7 @@
   become: true
   tasks:
   - name: Install Java 
-    yum: name=java-11* state=present
+    yum: name=java-21* state=present
 
   - name: Make directory /opt/tomcat
     command: mkdir -p /opt/tomcat
