@@ -7,6 +7,7 @@
  * `Tomcat 11.0.0`
  * `Jfrog 7.17.7`
  * `Git 2.43`
+ * `SonarQube 25.0`
 
 ## Installation on Redhat Latest version:
   
