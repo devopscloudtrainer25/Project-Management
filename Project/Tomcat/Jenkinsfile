@@ -15,7 +15,7 @@ pipeline{
         stage('pre-build step') {
             steps {
 		      sh '''
-                echo "Pre Build Step for Webhook Trigges the pipeline on push event"
+                echo "Pre Build Step for Webhook Trigges the pipeline on All events"
 		        '''
 	         }
 	    }
