@@ -1,32 +1,22 @@
-name: Run Tests
+name: Hello Actions
 
-# When to run
 on:
   push:
-    branches: [ feature-actions ]
-  pull_request:
-    branches: [ feature-actions ]
+    branches: [feature-actions]
+  workflow_dispatch:   # adds a manual "Run workflow" button
 
-# What to run
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        node: [18, 20, 22]
     steps:
-      # Step 1: Get your code
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      # Step 2: Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm install
-      
-      # Step 4: Run tests
-      - name: Run tests
-        run: npm test
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
