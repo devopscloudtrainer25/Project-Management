@@ -3,9 +3,9 @@ name: Run Tests
 # When to run
 on:
   push:
-    branches: [ main ]
+    branches: [ feature-actions ]
   pull_request:
-    branches: [ main ]
+    branches: [ feature-actions ]
 
 # What to run
 jobs:
